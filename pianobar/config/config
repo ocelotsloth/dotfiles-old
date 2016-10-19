@@ -1,0 +1,4 @@
+audio_quality = high
+user = linuxbox97@gmail.com
+password_command = cat $HOME/.config/pianobar/password
+event_command = ~/.config/pianobar/pianobar-notify.sh

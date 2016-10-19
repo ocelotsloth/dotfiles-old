@@ -1,11 +1,20 @@
 - defaults:
     link:
+      create: true
       relink: true
 
-- clean: ['~']
+- clean: ['~', '/.config']
 
 - link:
     ~/.dotfiles: ''
+    ~/.bashrc: bash/bashrc
+    ~/.gitconfig: git/gitconfig
+    ~/.i3blocks.conf: i3/i3blocks.conf
+    ~/.config/pianobar/config: pianobar/config/config
+    ~/.config/pianobar/control-pianobar.sh: pianobar/config/control-pianobar.sh
+    ~/.config/pianobar/pianobar-notify.sh: pianobar/config/pianobar-notify.sh
+    ~/.config/i3: i3/config
+    ~/.scripts: scripts
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
