@@ -7,3 +7,9 @@
 [submodule "zsh/oh-my-zsh-powerline-theme"]
 	path = zsh/oh-my-zsh-powerline-theme
 	url = git@github.com:jeremyFreeAgent/oh-my-zsh-powerline-theme.git
+[submodule "vim/bundle/Vundle.vim"]
+	path = vim/bundle/Vundle.vim
+	url = git@github.com:VundleVim/Vundle.vim.git
+[submodule "vim/spf13-vim"]
+	path = vim/spf13-vim
+	url = git@github.com:spf13/spf13-vim.git

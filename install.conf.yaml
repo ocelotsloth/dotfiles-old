@@ -9,6 +9,8 @@
   - [mkdir -p ~/.config ~/.config/pianobar ~/.config/i3 ~.oh-my-zsh/custom/themes, Creating directories]
   - [git submodule update --init --recursive, Installing submodules]
   - [./fonts/install.sh, Installing Powerline Fonts]
+  - curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+  - rm spf13-vim.sh
 
 - link:
     ~/.dotfiles: ''
