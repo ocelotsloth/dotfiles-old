@@ -173,7 +173,7 @@
 
 # Start i3bar
   bar {
-    font pango: ubuntu-mono, FontAwesome 20
+    font pango: ubuntu-mono, FontAwesome 26
     status_command i3blocks
     position top
     colors {

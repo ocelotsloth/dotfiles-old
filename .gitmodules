@@ -13,3 +13,6 @@
 [submodule "vim/spf13-vim"]
 	path = vim/spf13-vim
 	url = git@github.com:spf13/spf13-vim.git
+[submodule "scripts/collection/pdf2cymk/bash-scripts"]
+	path = scripts/collection/pdf2cymk/bash-scripts
+	url = git@github.com:rainnic/bash-scripts.git
