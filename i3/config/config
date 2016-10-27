@@ -100,8 +100,8 @@
 
 # workspace variable names
   set $workspace1 "1: "
-  set $workspace2 "2: "
-  set $workspace3 "3: "
+  set $workspace2 "2: "
+  set $workspace3 "3: "
   set $workspace4 "4: "
   set $workspace5 "5: "
   set $workspace6 "6: "
@@ -214,4 +214,8 @@
   assign [class="Franz"] $workspace9
 
 # Wallpaper
-  exec feh --bg-scale ~/.config/i3/wallpaper.jpg
+  exec feh --bg-fill ~/.config/i3/wallpaper.jpg
+
+# Autostart Applications
+  exec --no-startup-id /opt/franz/Franz
+  exec --no-startup-id firefox
