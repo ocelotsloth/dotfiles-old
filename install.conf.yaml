@@ -5,12 +5,6 @@
 
 - clean: ['~', '/.config']
 
-- shell:
-  - [mkdir -p ~/.config ~/.config/pianobar ~/.config/i3 ~.oh-my-zsh/custom/themes ~/.config/nvim , Creating directories]
-  - [git submodule update --init --recursive, Installing submodules]
-  - [./fonts/install.sh, Installing Powerline Fonts]
-  - [nvim +PlugInstall +PlugClean +qall, Installing NeoVim Distribution]
-
 - link:
     ~/.dotfiles: ''
     ~/.bashrc: bash/bashrc
@@ -26,3 +20,9 @@
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.config/nvim/plugins.vim: nvim/plugins.vim
     ~/.local/share/nvim/site/autoload/plug.vim: nvim/autoload/plug.vim
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [./fonts/install.sh, Installing Powerline Fonts]
+  - [nvim +PlugInstall +PlugClean +qall, Installing NeoVim Distribution]
+
