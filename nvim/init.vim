@@ -227,6 +227,11 @@
     " To disable the stripping of whitespace, add the following to your
     " .vimrc.before.local file:
     "   let g:ocelotsloth_keep_trailing_whitespace = 1
+    function! StripTrailingWhitespace()
+        let l:save = winsaveview()
+        %s/\s\+$//e
+        call winrestview(l:save)
+    endfunction
     autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:ocelotsloth_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
