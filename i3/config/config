@@ -3,6 +3,7 @@
 
 # Constants
   set $mod Mod1
+  set $sup Mod4
 
   set $base00 #101218
   set $base01 #3C3B37
@@ -38,12 +39,12 @@
 # Pianobar Bindings
   set $pianobar ~/.config/pianobar/control-pianobar.sh
 
-  bindsym $mod+Control+p exec $pianobar p
-  bindsym $mod+Control+q exec $pianobar stop
-  bindsym $mod+Control+n exec $pianobar next
-  bindsym $mod+Control+s exec $pianobar switchstation
-  bindsym $mod+Control+l exec $pianobar love
-  bindsym $mod+Control+b exec $pianobar ban
+  bindsym $sup+p exec $pianobar p
+  bindsym $sup+q exec $pianobar stop
+  bindsym $sup+n exec $pianobar next
+  bindsym $sup+s exec $pianobar switchstation
+  bindsym $sup+l exec $pianobar love
+  bindsym $sup+b exec $pianobar ban
 
 # kill focused window
   bindsym $mod+Shift+q kill
