@@ -20,6 +20,7 @@
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.config/nvim/plugins.vim: nvim/plugins.vim
     ~/.local/share/nvim/site/autoload/plug.vim: nvim/autoload/plug.vim
+    ~/.config/dunst/dunstrc: dunst/dunstrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
