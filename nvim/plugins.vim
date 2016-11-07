@@ -70,7 +70,7 @@
     " }
 
     if !exists('g:ocelotsloth_plug_groups')
-        let g:ocelotsloth_plug_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+        let g:ocelotsloth_plug_groups=['general', 'writing', 'deoplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
     endif
 
     " General {
@@ -170,6 +170,8 @@
             Plug 'Shougo/neosnippet'
             Plug 'Shougo/neosnippet-snippets'
             Plug 'honza/vim-snippets'
+        elseif count(g:ocelotsloth_plug_groups, 'deoplete')
+            Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         endif
     " }
 
@@ -198,6 +200,7 @@
             Plug 'pangloss/vim-javascript'
             Plug 'briancollins/vim-jst'
             Plug 'kchmck/vim-coffee-script'
+            Plug 'digitaltoad/vim-pug'
         endif
     " }
 
