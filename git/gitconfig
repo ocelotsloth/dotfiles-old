@@ -1,3 +1,9 @@
 [user]
 	name = Mark Stenglein
 	email = mark@stengle.in
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[core]
+	excludesfile = /home/mstengle/.config/git/gitignore_global

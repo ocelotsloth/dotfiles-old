@@ -5,10 +5,15 @@
 
 - clean: ['~', '/.config']
 
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [./fonts/install.sh, Installing Powerline Fonts]
+
 - link:
     ~/.dotfiles: ''
     ~/.bashrc: bash/bashrc
     ~/.gitconfig: git/gitconfig
+    ~/.config/git/gitignore_global: git/gitignore_global
     ~/.i3blocks.conf: i3/i3blocks.conf
     ~/.config/pianobar/config: pianobar/config/config
     ~/.config/pianobar/control-pianobar.sh: pianobar/config/control-pianobar.sh
@@ -23,7 +28,6 @@
     ~/.config/dunst/dunstrc: dunst/dunstrc
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [./fonts/install.sh, Installing Powerline Fonts]
+  - [git config --global core.excludesfile ~/.config/git/gitignore_global, Setting global Gitignore]
   - [nvim +PlugInstall +PlugClean +qall, Installing NeoVim Distribution]
 
