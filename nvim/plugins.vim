@@ -70,7 +70,7 @@
     " }
 
     if !exists('g:ocelotsloth_plug_groups')
-        let g:ocelotsloth_plug_groups=['general', 'writing', 'deoplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+        let g:ocelotsloth_plug_groups=['general', 'writing', 'matlab', 'deoplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
     endif
 
     " General {
@@ -128,6 +128,12 @@
             Plug 'reedes/vim-textobj-sentence'
             Plug 'reedes/vim-textobj-quote'
             Plug 'reedes/vim-wordy'
+        endif
+    " }
+
+    " MATLAB {
+        if count(g:ocelotsloth_plug_groups, 'matlab')
+            Plug 'MatlabFilesEdition'
         endif
     " }
 
