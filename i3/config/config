@@ -45,6 +45,7 @@
   bindsym $sup+s exec $pianobar switchstation
   bindsym $sup+l exec $pianobar love
   bindsym $sup+b exec $pianobar ban
+  bindsym $sup+d exec $pianobar download
 
 # kill focused window
   bindsym $mod+Shift+q kill
