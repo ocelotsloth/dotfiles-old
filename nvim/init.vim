@@ -233,6 +233,7 @@
         call winrestview(l:save)
     endfunction
     autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:ocelotsloth_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    autocmd FileType javascript setlocal sw=2 sts=2
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
@@ -332,6 +333,10 @@
 
 
     " Plugins {
+
+        " Javascript {
+            "let g:syntastic_javascript_checkers = ['standard']
+        " }
 
         " GoLang {
             if count(g:ocelotsloth_plug_groups, 'go')

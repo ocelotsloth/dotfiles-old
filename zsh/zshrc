@@ -29,13 +29,13 @@ POWERLINE_GIT_UNMERGED="═"
 
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git ubuntu)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -62,3 +62,6 @@ alias cddc="cd ~/dev/school/"
 alias cdds="cd ~/dev/srct"
 alias cddp="cd ~/dev/personal"
 alias c="clear"
+
+export NVM_DIR="/home/mstengle/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
