@@ -240,6 +240,7 @@
             Plug 'gorodinskiy/vim-coloresque'
             Plug 'tpope/vim-haml'
             Plug 'mattn/emmet-vim'
+            Plug 'yosssi/vim-ace'
         endif
     " }
 

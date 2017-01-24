@@ -4,6 +4,9 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/mstengle/.oh-my-zsh
 
+# Go Path
+  export PATH=$HOME/go/bin:$PATH
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -65,3 +68,15 @@ alias c="clear"
 
 export NVM_DIR="/home/mstengle/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# auto-ls () {
+#    if [[ $#BUFFER -eq 0 ]]; then
+#        echo ""
+#        ls -lahtr
+#        zle redisplay
+#    else
+#        zle accept-line
+#    fi
+# }
+# zle -N auto-ls
+# bindkey '^M' auto-ls
