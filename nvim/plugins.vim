@@ -148,6 +148,7 @@
             Plug 'tpope/vim-commentary'
             Plug 'godlygeek/tabular'
             Plug 'luochen1990/rainbow'
+            Plug 'leafgarland/typescript-vim'
             if executable('ctags')
                 Plug 'majutsushi/tagbar'
             endif
