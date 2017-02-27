@@ -6,4 +6,4 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 [core]
-	excludesfile = /home/mstengle/.config/git/gitignore_global
+	excludesfile = /home/ocelotsloth/.config/git/gitignore_global
