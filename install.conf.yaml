@@ -5,27 +5,14 @@
 
 - clean: ['~', '/.config']
 
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [./fonts/install.sh, Installing Powerline Fonts]
-
 - link:
     ~/.dotfiles: ''
     ~/.bashrc: bash/bashrc
     ~/.gitconfig: git/gitconfig
     ~/.config/git/gitignore_global: git/gitignore_global
-    ~/.i3blocks.conf: i3/i3blocks.conf
-    ~/.config/pianobar/config: pianobar/config/config
-    ~/.config/pianobar/control-pianobar.sh: pianobar/config/control-pianobar.sh
-    ~/.config/pianobar/pianobar-notify.sh: pianobar/config/pianobar-notify.sh
-    ~/.config/i3: i3/config
-    ~/.scripts: scripts
-    ~/.zshrc: zsh/zshrc
-    ~/.oh-my-zsh/custom/themes/powerline.zsh-theme: zsh/oh-my-zsh-powerline-theme/powerline.zsh-theme
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.config/nvim/plugins.vim: nvim/plugins.vim
     ~/.local/share/nvim/site/autoload/plug.vim: nvim/autoload/plug.vim
-    ~/.config/dunst/dunstrc: dunst/dunstrc
 
 - shell:
   - [git config --global core.excludesfile ~/.config/git/gitignore_global, Setting global Gitignore]
