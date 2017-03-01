@@ -15,6 +15,7 @@
     ~/.local/share/nvim/site/autoload/plug.vim: nvim/autoload/plug.vim
     ~/.fonts/PowerlineSymbols.otf: fonts/PowerlineSymbols.otf
     ~/.config/fontconfig/conf.d/10-powerline-symbols.conf: fonts/10-powerline-symbols.conf
+    ~/.config/redshift.conf: redshift/redshift.conf
 
 - shell:
   - [fc-cache -vf ~/.fonts/, Updating font cache]
