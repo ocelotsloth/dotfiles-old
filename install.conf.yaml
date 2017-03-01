@@ -13,8 +13,11 @@
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.config/nvim/plugins.vim: nvim/plugins.vim
     ~/.local/share/nvim/site/autoload/plug.vim: nvim/autoload/plug.vim
+    ~/.fonts/PowerlineSymbols.otf: fonts/PowerlineSymbols.otf
+    ~/.config/fontconfig/conf.d/10-powerline-symbols.conf: fonts/10-powerline-symbols.conf
 
 - shell:
+  - [fc-cache -vf ~/.fonts/, Updating font cache]
   - [git config --global core.excludesfile ~/.config/git/gitignore_global, Setting global Gitignore]
   - [nvim +PlugInstall +PlugClean +qall, Installing NeoVim Distribution]
 
