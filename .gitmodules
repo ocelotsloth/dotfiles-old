@@ -16,3 +16,9 @@
 [submodule "scripts/collection/pdf2cymk/bash-scripts"]
 	path = scripts/collection/pdf2cymk/bash-scripts
 	url = git@github.com:rainnic/bash-scripts.git
+[submodule ".tmux"]
+	path = .tmux
+	url = git@github.com:gpakosz/.tmux.git
+[submodule "tmux"]
+	path = tmux
+	url = git@github.com:gpakosz/.tmux.git
