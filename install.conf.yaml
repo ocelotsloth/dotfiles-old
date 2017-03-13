@@ -18,6 +18,12 @@
     ~/.config/redshift.conf: redshift/redshift.conf
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux.conf.local: tmux/tmux.conf.local
+    ~/.mutt/muttrc: mutt/muttrc
+    ~/.mutt/mailcap: mutt/mailcap
+    ~/.mutt/accounts: mutt/accounts
+    ~/.notmuch-config: notmuch/config
+    ~/Mail/.notmuch/hooks: notmuch/hooks
+    ~/.config/offlineimap: offlineimap
 
 - shell:
   - [fc-cache -vf ~/.fonts/, Updating font cache]
