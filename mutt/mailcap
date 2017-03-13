@@ -1,0 +1,9 @@
+text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
+application/pdf; acroread %s
+image/jpeg; eog %s
+image/gif; eog %s &
+image/GIF; eog %s &
+image/JPG; eog %s &
+image/jpg; eog %s &
+image/png; eog %s &
+image/PNG; eog %s &

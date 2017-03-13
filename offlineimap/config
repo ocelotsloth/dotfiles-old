@@ -1,0 +1,154 @@
+[general]
+accounts = zoho,masonlive,gmail
+maxsyncaccounts = 3
+pythonfile = ~/.config/offlineimap/helpers.py
+
+[Account zoho]
+localrepository = zoho-local
+remoterepository = zoho-remote
+autorefresh = 0.5
+quick = 10
+postsynchook = notmuch new
+
+[Repository zoho-local]
+type = Maildir
+localfolders = ~/Mail/zoho
+nametrans = lambda folder: {
+                            'drafts': 'Drafts',
+                            'inbox':  'INBOX',
+                            'sent':   'Sent',
+                            'spam':   'Spam',
+                            'trash':  'Trash',
+                            }.get(folder, folder)
+
+
+[Repository zoho-remote]
+type = IMAP
+remotehost = imap.zoho.com
+remoteport = 993
+remoteuser = mark@stengle.in
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotepasseval = get_pass("zoho")
+keepalive = 60
+holdconnectionopen = yes
+folderfilter = lambda folder: folder not in ['Notes', 'Templates']
+nametrans = lambda folder:      re.sub('Drafts', 'drafts',
+                                re.sub('INBOX', 'inbox',
+                                re.sub('Sent', 'sent',
+                                re.sub('Spam', 'spam',
+                                re.sub('Trash', 'trash', folder)))))
+
+[Account masonlive]
+localrepository = masonlive-local
+remoterepository = masonlive-remote
+autorefresh = 0.5
+quick = 10
+postsynchook = notmuch new
+
+[Repository masonlive-local]
+type = Maildir
+localfolders = ~/Mail/masonlive
+nametrans = lambda folder: {
+                            'archive':          'Archive',
+                            'drafts':           'Drafts',
+                            'honorsList':       'Honors College ListServ',
+                            'trash':            'Deleted Items',
+                            'greenMachineList': 'Green Machine ListServ',
+                            'inbox':            'INBOX',
+                            'spam':             'Junk Email',
+                            'srct':             'SRCT Email',
+                            'srctGit':          'SRCT GitLab',
+                            'vseList':          'VSE ListServ',
+                            'sent':             'Sent Items',
+                            }.get(folder, folder)
+
+[Repository masonlive-remote]
+type = IMAP
+remotehost = outlook.office365.com
+remoteport = 993
+remoteuser = mstengle@masonlive.gmu.edu
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotepasseval = get_pass("masonlive")
+#keepalive = 60
+#holdconnectionopen = yes
+folderfilter = lambda folder: folder in [
+	'Archive',
+	'Drafts',
+	'Deleted Items',
+	'Green Machine ListServ',
+	'INBOX',
+	'SRCT GitLab',
+	'SRCT Email',
+	'VSE ListServ',
+	'Sent Items',
+	'Junk Email',
+	'Honors College ListServ']
+nametrans = lambda folder:      re.sub('Archive', 'archive',
+                                re.sub('Drafts', 'drafts',
+                                re.sub('Honors College ListServ', 'honorsList',
+                                re.sub('Deleted Items', 'trash',
+                                re.sub('Green Machine ListServ', 'greenMachineList',
+                                re.sub('INBOX', 'inbox',
+                                re.sub('SRCT GitLab', 'srctGit',
+                                re.sub('SRCT Email', 'srct',
+                                re.sub('VSE ListServ', 'vseList',
+                                re.sub('Sent Items', 'sent',
+                                re.sub('Junk Email', 'spam', folder)))))))))))
+
+[Account gmail]
+localrepository = gmail-local
+remoterepository = gmail-remote
+autorefresh = 0.5
+quick = 10
+postsynchook = notmuch new
+
+[Repository gmail-local]
+type = GmailMaildir
+localfolders = ~/Mail/gmail
+nametrans = lambda folder: {
+                            'drafts':    '[Gmail]/Drafts',
+                            'flagged':   '[Gmail]/Starred',
+                            'important': '[Gmail]/Important',
+                            'inbox':     'INBOX',
+                            'spam':      '[Gmail]/Spam',
+                            'trash':     '[Gmail]/Trash',
+                            'all':       '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository gmail-remote]
+type = Gmail
+remotehost = imap.gmail.com
+remoteuser = linuxbox97@gmail.com
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteport = 993
+auth_mechanisms = XOAUTH2
+oauth2_client_id_eval = get_pass("gmail/oauth2_client_id")
+oauth2_client_secret_eval = get_pass("gmail/oauth2_client_secret")
+oauth2_refresh_token_eval = get_pass("gmail/oauth2_refresh")
+nametrans = lambda folder:      re.sub('\[Gmail\]\/All Mail', 'all',
+                                re.sub('\[Gmail\]\/Drafts', 'drafts',
+                                re.sub('\[Gmail\]\/Important', 'important',
+                                re.sub('\[Gmail\]\/Sent Mail', 'sent',
+                                re.sub('\[Gmail\]\/Spam', 'spam',
+                                re.sub('\[Gmail\]\/Starred', 'flagged',
+                                re.sub('\[Gmail\]\/Trash', 'trash',
+                                re.sub('INBOX', 'inbox', folder))))))))
+
+folderfilter = lambda folder: folder in ['[Gmail]/Drafts',
+                                         '[Gmail]/Sent Mail',
+                                         '[Gmail]/Trash',
+                                         '[Gmail]/Spam',
+                                         '[Gmail]/Important',
+                                         '[Gmail]/Starred',
+                                         'INBOX']
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"

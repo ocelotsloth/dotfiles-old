@@ -1,0 +1,47 @@
+#!/bin/bash
+
+echo "Applying tag filters"
+
+notmuch tag +archive date:..$(date -d "1 months ago" +"%Y-%m-%d") and not tag:archive
+
+# Filter out all the junk mail
+notmuch tag +junk from:specials.chegg.com and not tag:junk
+notmuch tag +junk from:em.chegg.com and not tag:junk
+notmuch tag +junk from:reply1.ebay.com and not tag:junk
+notmuch tag +junk from:info@twitter.com and not tag:junk
+notmuch tag +junk from:pinbot@explore.pinterest.com and not tag:junk
+notmuch tag +junk from:info@i.massdrop.com and not tag:junk
+notmuch tag +junk from:Promo@email.newegg.com and not tag:junk
+notmuch tag +junk from:barnesandnoble@mail.barnesandnoble.com and not tag:junk
+notmuch tag +junk from:help@hackster.io and not tag:junk
+notmuch tag +junk from:Offers@offers.dominos.com and not tag:junk
+notmuch tag +junk from:eNews@email.microcentermedia.com and not tag:junk
+notmuch tag +junk from:newsletter@noisetrade.com and not tag:junk
+notmuch tag +junk from:deals@mail.stackcommerce.com and not tag:junk
+notmuch tag +junk from:marketing@tapingo.com and not tag:junk
+notmuch tag +junk from:newsletters@cnet.online.com and not tag:junk
+notmuch tag +junk from:Lenovo@enews.lenovo.com and not tag:junk
+notmuch tag +junk from:team@Mint.com and not tag:junk
+notmuch tag +junk "uploaded or live and from:noreply@youtube.com and not tag:junk"
+notmuch tag +junk from:donotreply@usa.redcross.org and not tag:junk
+notmuch tag +junk from:noreply@medium.com and not tag:junk
+notmuch tag +junk from:noreply@geocaching.com and not tag:junk
+notmuch tag +junk from:contact@sculpteo.com and not tag:junk
+notmuch tag +junk from:no-reply@webdesignerdepot.com and not tag:junk
+notmuch tag +junk from:visualanalysis@data.tableau.com and not tag:junk
+notmuch tag +junk from:no-reply@mail.newsletter.instructables.com and not tag:junk
+notmuch tag +junk from:mail@ifttt.com and not tag:junk
+notmuch tag +junk from:no-reply@tumblr.com and not tag:junk
+notmuch tag +junk from:contact@mailer.humblebundle.com and not tag:junk
+notmuch tag +junk "(love and not update) and from:no-reply@kickstarter.com and not tag:junk"
+notmuch tag +junk from:news@e.kickstarter.com and not tag:junk
+notmuch tag +junk from:no-reply-alexa@amazon.com and not tag:junk
+notmuch tag +junk from:store_news@amazon.com and not tag:junk
+notmuch tag +junk from:aws-marketing-email-replies@amazon.com and not tag:junk
+notmuch tag +junk from:no-reply-mobile-app-distribution@amazon.com and not tag:junk
+
+# Tag all spam
+notmuch tag +spam "(path:zoho/spam/** or path:gmail/spam/** or path:masonlive/spam/**) and NOT tag:spam"
+
+
+notmuch tag +family from:dbjmp.us and not tag:family

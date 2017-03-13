@@ -1,0 +1,19 @@
+set from = "mstengle@masonlive.gmu.edu"
+set sendmail = "/usr/bin/msmtp -a masonlive"
+set mbox = "+masonlive/archive"
+set postponed = "+masonlive/drafts"
+set record = "+masonlive/sent"
+
+color status cyan default
+
+macro index D \
+    "<save-message>+masonlive/trash<enter>" \
+    "move message to the trash"
+
+macro index S \
+    "<save-message>+masonlive/spam<enter>" \
+    "mark message as spam"
+
+set status_chars  = " *%A"
+set status_format = "──[ mstengle@gmu.edu ]──[ Folder: %f ]─%V──[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?─── %l|%L"
+
