@@ -146,6 +146,38 @@
         endif
     " }
 
+    " vimwiki {
+        " Register the root wiki folder
+        let g:vimwiki_list = [{'path': '$HOME/Wiki'}]
+
+        " follow folder links to /index.wiki
+        let g:vimwiki_dir_link = 'index'
+
+        " highlight headers
+        let g:vimwiki_hl_headers = 1
+
+        " highlight completed tasks
+        let g:vimwiki_hl_cb_checked = 1
+
+        au BufRead,BufNewFile *.wiki set filetype=vimwiki
+        :autocmd FileType vimwiki map <leader>d :VimwikiMakeDiaryNote<CR>
+        function! ToggleCalendar()
+            execute ":Calendar"
+            if exists("g:calendar_open")
+                if g:calendar_open == 1
+                    execute "q"
+                    unlet g:calendar_open
+                else
+                    g:calendar_open = 1
+                end
+            else
+                let g:calendar_open = 1
+            end
+        endfunction
+        :autocmd FileType vimwiki map <leader>c :call ToggleCalendar()<CR>
+
+    " }
+
 " }
 
 " Vim UI {

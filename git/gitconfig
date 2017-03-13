@@ -7,3 +7,9 @@
 	required = true
 [core]
 	excludesfile = /home/ocelotsloth/.config/git/gitignore_global
+[sendemail]
+    from = Mark Stenglein <mark@stengle.in>
+    smtpuser = mark@stengle.in
+    smtpserver = "/usr/bin/msmtp"
+    smtpencryption = tls
+    chainreplyto = false

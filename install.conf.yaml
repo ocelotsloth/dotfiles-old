@@ -16,6 +16,8 @@
     ~/.fonts/PowerlineSymbols.otf: fonts/PowerlineSymbols.otf
     ~/.config/fontconfig/conf.d/10-powerline-symbols.conf: fonts/10-powerline-symbols.conf
     ~/.config/redshift.conf: redshift/redshift.conf
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf.local: tmux/tmux.conf.local
 
 - shell:
   - [fc-cache -vf ~/.fonts/, Updating font cache]

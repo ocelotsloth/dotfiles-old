@@ -119,6 +119,12 @@
             Plug 'kana/vim-textobj-user'
             Plug 'kana/vim-textobj-indent'
             Plug 'gcmt/wildfire.vim'
+            Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+            Plug 'mattn/calendar-vim'
+            Plug 'tbabej/taskwiki'
+            Plug 'powerman/vim-plugin-AnsiEsc'
+            Plug 'majutsushi/tagbar'
+            Plug 'blindFS/vim-taskwarrior'
         endif
     " }
 
@@ -236,7 +242,6 @@
 
     " HTML {
         if count(g:ocelotsloth_plug_groups, 'html')
-            Plug 'amirh/HTML-AutoCloseTag'
             Plug 'hail2u/vim-css3-syntax'
             Plug 'gorodinskiy/vim-coloresque'
             Plug 'tpope/vim-haml'
